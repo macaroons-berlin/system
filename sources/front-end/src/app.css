@@ -31,8 +31,9 @@ body {
 }
 
 body > * {
+  position: relative;
   user-select: none;
-  pointer-events: none;
+  /* pointer-events: none; */
 }
 
 /* body::before {
@@ -58,12 +59,14 @@ body > * {
 }
 
 a {
-  color: var(--accent-color);
+  color: var(--text-color);
   text-decoration: none;
 }
 
 a:hover {
+  color: var(--accent-color);
   text-decoration: underline;
+  transition: color 0.125s linear;
 }
 
 
@@ -88,6 +91,17 @@ button:focus:not(:focus-visible) {
   letter-spacing: -0.022em;
   -webkit-font-smoothing: antialiased;
   font-feature-settings: "case" 0, "cpsp" 0, "dlig" 0, "frac" 0, "dnom" 0, "numr" 0, "salt" 0, "subs" 0, "sups" 0, "tnum", "zero", "ss01", "ss02" 0, "ss03" 0, "ss04" 0, "cv01" 0, "cv02" 0, "cv03" 0, "cv04" 0, "cv05" 0, "cv06" 0, "cv07", "cv08" 0, "cv09" 0, "cv10" 0, "cv11" 0, "calt", "ccmp", "kern";
-  transition: color 0.125s linear;
   pointer-events: all;
+}
+
+.disabledControl {
+  pointer-events: none;
+  filter: blur(1px) opacity(0.25) brightness(1.0);
+  transition: all 0.125s linear;
+}
+
+.reenabledControl {
+  pointer-events: all;
+  filter: none;
+  transition: all 0.125s linear;
 }
