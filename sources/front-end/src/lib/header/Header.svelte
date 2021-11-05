@@ -10,7 +10,7 @@
 
     position: sticky;
     top: 0;
-    padding: 0 6rem;
+    padding: 0 2rem;
     contain: var(--contain);
   }
 
@@ -49,6 +49,7 @@
     height: 100%;
     width: 100%;
     padding: 0;
+    text-decoration: none;
   }
 
 
