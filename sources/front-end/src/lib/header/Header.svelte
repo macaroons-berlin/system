@@ -51,11 +51,6 @@
     padding: 0;
     text-decoration: none;
   }
-
-
-  ul > li > a:hover {
-    color: var(--accent-color);
-  }
 </style>
 
 <header>
