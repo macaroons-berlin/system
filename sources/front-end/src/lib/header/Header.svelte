@@ -5,7 +5,7 @@
 <style>
   header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
 
     position: sticky;
@@ -40,7 +40,6 @@
   ul > li:not(:first-of-type) {
     margin-left: 1rem;
   }
-
 
   ul > li > a {
     display: flex;
