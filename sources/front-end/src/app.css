@@ -7,6 +7,10 @@
   --heading-color: hsl(0deg 0% 82%);
   --text-color: var(--heading-color);
   --contain: content;
+
+  /* http://www.roblaplaca.com/examples/bezierBuilder/ */
+  --transition-timing-function: cubic-bezier(.20, 0, .19, 1);
+  --transition-duration: 0.125s;
 }
 
 body {
@@ -66,7 +70,7 @@ a {
 a:hover {
   color: var(--accent-color);
   text-decoration: underline;
-  transition: color 0.125s linear;
+  transition: color var(--transition-duration) var(--transition-timing-function);
 }
 
 
@@ -97,11 +101,11 @@ button:focus:not(:focus-visible) {
 .disabledControl {
   pointer-events: none;
   filter: blur(1px) opacity(0.25) brightness(1.0);
-  transition: all 0.125s linear;
+  transition: all var(--transition-duration) var(--transition-timing-function);
 }
 
 .reenabledControl {
   pointer-events: all;
   filter: none;
-  transition: all 0.125s linear;
+  transition: all var(--transition-duration) var(--transition-timing-function);
 }

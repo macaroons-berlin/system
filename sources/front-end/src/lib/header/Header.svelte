@@ -1,5 +1,6 @@
 <script>
   import { page } from '$app/stores';
+  import Hamburger from '$lib/controls/Hamburger/Hamburger.svelte';
 </script>
 
 <style>
@@ -53,6 +54,7 @@
 </style>
 
 <header>
+  <Hamburger />
   <nav>
     <ul>
       <!-- <li class:active={$page.path === '/'}><a sveltekit:prefetch href="/">Home</a></li> -->
