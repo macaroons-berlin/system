@@ -1,14 +1,65 @@
+<script>
+  import {
+    onMount,
+    onDestroy,
+  } from 'svelte';
+  import {
+    shouldHandleEvent,
+  } from '$lib/helpers/shouldHandleEvent.mjs';
+
+  let navSideBar;
+  let channel;
+  let isSideBarVisible = false;
+
+  const toggleSideBarVisibility = () => {
+    const sideBarWidth = getComputedStyle(navSideBar).getPropertyValue('--sidebar-width');
+
+    if (isSideBarVisible === false) {
+      navSideBar.style.setProperty('--sidebar-left', 0);
+    } else {
+      navSideBar.style.setProperty('--sidebar-left', `calc(-1 * ${sideBarWidth})`);
+    }
+
+    isSideBarVisible = !isSideBarVisible;
+  }
+
+  const handleHamburgerRelatedMessage = (messageEvent) => {
+    if (shouldHandleEvent(messageEvent) === false) {
+      return;
+    }
+
+    toggleSideBarVisibility();
+  }
+
+
+  onMount(() => {
+    channel = new BroadcastChannel('hamburger');
+    channel?.addEventListener('message', handleHamburgerRelatedMessage);
+  });
+
+  onDestroy(() => {
+    channel?.removeEventListener('message', handleHamburgerRelatedMessage);
+    channel?.close();
+  });
+</script>
+
 <style>
+
   section {
+    --sidebar-width: 20vw;
+    --sidebar-left: calc(var(--sidebar-width) * -1);
+
     display: flex;
     flex-direction: column; 
     position: absolute;
     top: 0;
-    left: 0;
     bottom: 0;
-    width: 20vw;
+    left: var(--sidebar-left);
+    width: var(--sidebar-width);
 
-    background-color: hsl(0, 0%, 0%);
+    transition: left var(--transition-duration) var(--transition-timing-function);
+
+    background-color: hsl(0deg 0% 8% / 90%);
   }
 
   section li {
@@ -80,11 +131,11 @@
 
   .sidebar-controls-close:hover {
     color: var(--accent-color);
-    transition: color 0.125s linear;
+    transition: color var(--transition-duration) var(--transition-timing-function)
   }
 </style>
 
-<section>
+<section bind:this={navSideBar}>
   <ul class='sidebar-controls'>
     <li class='sidebar-controls-categories-container'>
       <ul class='sidebar-controls-categories nav-text'>
@@ -94,7 +145,7 @@
       </ul>
     </li>
     <li class='sidebar-controls-close-container'>
-      <button class='sidebar-controls-close nav-text'>&times;</button>
+      <button class='sidebar-controls-close nav-text' on:click={toggleSideBarVisibility}>&times;</button>
     </li>
   </ul>
   <ul>
