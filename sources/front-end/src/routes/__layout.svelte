@@ -2,6 +2,7 @@
   import {
     isBrowserSupported,
   } from '$lib/helpers/isBrowserSupported.mjs';
+  import NavSideBar from '$lib/nav-sidebar/NavSideBar.svelte';
   import Header from '$lib/header/Header.svelte';
   import Footer from '$lib/footer/Footer.svelte';
   import UnsupportedBrowser from '$lib/unsupported-browser/UnsupportedBrowser.svelte';
@@ -40,6 +41,7 @@
 {:then value} 
   {#if value === true}
     <Header />
+    <NavSideBar />
 
     <main>
       <slot />
