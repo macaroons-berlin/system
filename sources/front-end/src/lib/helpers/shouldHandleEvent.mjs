@@ -1,7 +1,7 @@
+import {
+  browser,
+} from '$app/env';
+
 export const shouldHandleEvent = (someEvent) => {
-  if ('isTrusted' in someEvent) {
-    return someEvent.isTrusted === true;
-  } else {
-    return true;
-  }
+  return browser === true && 'isTrusted' in someEvent ? someEvent.isTrusted === true : false;
 }

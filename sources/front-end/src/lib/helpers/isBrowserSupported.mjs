@@ -1,9 +1,13 @@
+import {
+  browser,
+} from '$app/env';
+
 const checkBroadcastChannel = () => {
-  return 'BroadcastChannel' in window;
+  return browser === true ? 'BroadcastChannel' in window : true;
 }
 
 const checkHasOwn = () => {
-  return 'hasOwn' in Object;
+  return browser === true ? 'hasOwn' in Object : true;
 }
 
 const checks = [
