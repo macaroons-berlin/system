@@ -78,7 +78,7 @@
   }
 </style>
 
-<form on:submit|preventDefault|stopPropagation|trusted={handleSubscriberEmailSubmit}>
+<form rel='noreferrer' on:submit|preventDefault|stopPropagation|trusted={handleSubscriberEmailSubmit}>
   <label for='email-input' class='nav-text join-newsletter-title'>join our newsletter</label>
   <div class='join-newsletter-input'>
     <input
