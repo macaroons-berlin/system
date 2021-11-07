@@ -1,3 +1,5 @@
+import adapterNode from '@sveltejs/adapter-node';
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	compilerOptions: {
@@ -6,6 +8,9 @@ const config = {
 	},
 	extensions: [ '.svelte' ],
 	kit: {
+		adapter: adapterNode({
+			precompress: true,
+		}),
 		// hydrate the <div id="macaroons-berlin"> element in src/app.html
 		target: '#macaroons-berlin',
 		hydrate: true,
