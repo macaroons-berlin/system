@@ -93,10 +93,10 @@
   <div class='follow-us'>
     <List id='follow-us-list' caption='follow us'>
       <li>
-        <a ref='external' href='https://www.facebook.com/groups/235721428293809' target='_blank'>facebook</a>
+        <a ref='external' rel='noreferrer' href='https://www.facebook.com/groups/235721428293809' target='_blank'>facebook</a>
       </li>
       <li>
-        <a ref='external' href='https://www.instagram.com/macarons_berlin/' target='_blank'>instagram</a>
+        <a ref='external' rel='noreferrer' href='https://www.instagram.com/macarons_berlin/' target='_blank'>instagram</a>
       </li>
     </List>
   </div>

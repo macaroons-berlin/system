@@ -46,7 +46,7 @@
   </label>
   <ul id='supported-browsers'>
     <li>
-      <a href='https://www.google.com/chrome/' target='_blank' class='browser-info'>
+      <a rel='noreferrer' href='https://www.google.com/chrome/' target='_blank' class='browser-info'>
         <img
           src="https://www.google.com/chrome/static/images/chrome-logo.svg"
           role="img"
@@ -55,7 +55,7 @@
       </a>
     </li>
     <li>
-      <a href='https://www.mozilla.org/en-US/firefox/new/' target='_blank' class='browser-info'>
+      <a rel='noreferrer' href='https://www.mozilla.org/en-US/firefox/new/' target='_blank' class='browser-info'>
         <img
           src="https://www.mozilla.org/media/protocol/img/logos/firefox/browser/logo-word-hor.7ff44b5b4194.svg"
           class="chr-homepage-hero__logo"
