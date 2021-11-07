@@ -1,5 +1,5 @@
 export const shouldHandleEvent = (someEvent) => {
-  if (Object.hasOwn(someEvent, 'isTrusted')) {
+  if ('isTrusted' in someEvent) {
     return someEvent.isTrusted === true;
   } else {
     return true;
