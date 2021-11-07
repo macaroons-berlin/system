@@ -39,6 +39,7 @@
 
   .newsletter {
     grid-area: newsletter;
+    margin-bottom: 3vh;
   }
 
   .help {
@@ -63,49 +64,49 @@
   <div class='help'>
     <List id='help-list' caption='help'>
       <li>
-        <a href='/help/faq'>frequently asked questions</a>
+        <a sveltekit:prefetch href='/help/faq'>frequently asked questions</a>
       </li>
       <li>
-        <a href='/help/how-to-purchase'>how to purchase</a>
+        <a sveltekit:prefetch href='/help/how-to-purchase'>how to purchase</a>
       </li>
       <li>
-        <a href='/help/transport-and-delivery'>transport and delivery</a>
+        <a sveltekit:prefetch href='/help/transport-and-delivery'>transport and delivery</a>
       </li>
       <li>
-        <a href='/help/payments'>payments</a>
+        <a sveltekit:prefetch href='/help/payments'>payments</a>
       </li>
       <li>
-        <a href='/help/contact'>contact</a>
+        <a sveltekit:prefetch href='/help/contact'>contact</a>
       </li>
     </List>
   </div>
   <div class='company'>
     <List id='company-list' caption='company'>
       <li>
-        <a href='/company/services'>services</a>
+        <a sveltekit:prefetch href='/company/services'>services</a>
       </li>
       <li>
-        <a href='/company/history-of-the-brand'>history of the brand</a>
+        <a sveltekit:prefetch href='/company/history-of-the-brand'>history of the brand</a>
       </li>
     </List>
   </div>
   <div class='follow-us'>
     <List id='follow-us-list' caption='follow us'>
       <li>
-        <a href='https://www.facebook.com/groups/235721428293809' target='_blank'>facebook</a>
+        <a ref='external' href='https://www.facebook.com/groups/235721428293809' target='_blank'>facebook</a>
       </li>
       <li>
-        <a href='https://www.instagram.com/macarons_berlin/' target='_blank'>instagram</a>
+        <a ref='external' href='https://www.instagram.com/macarons_berlin/' target='_blank'>instagram</a>
       </li>
     </List>
   </div>
   <div class='legal'>
     <List id='legal-list' isInline={true} caption='legal'>
       <li>
-        <a href='/legal/gdpr'>GDPR</a>
+        <a sveltekit:prefetch href='/legal/gdpr'>GDPR</a>
       </li>
       <li>
-        <a href='/legal/imprint'>imprint</a>
+        <a sveltekit:prefetch href='/legal/imprint'>imprint</a>
       </li>
     </List>
   </div>
