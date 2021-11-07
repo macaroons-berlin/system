@@ -1,9 +1,9 @@
 const checkBroadcastChannel = () => {
-  return typeof BroadcastChannel !== 'undefined';
+  return 'BroadcastChannel' in window;
 }
 
 const checkHasOwn = () => {
-  return typeof Object.hasOwn !== 'undefined';
+  return 'hasOwn' in Object;
 }
 
 const checks = [
